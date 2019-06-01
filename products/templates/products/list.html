@@ -1,0 +1,42 @@
+<!-- {{ qs }}
+
+{'paginator': None, 
+'page_obj': None, 
+'is_paginated': False, 
+'object_list': <QuerySet [<Product: shirt>, <Product: hat>]>, 
+'product_list': <QuerySet [<Product: shirt>, <Product: hat>]>, 
+'view': <products.views.ProductListView object at 0x0000000004607D68>}
+
+{{paginator}}
+{{page_obj}}
+{{is_paginated}}
+{{object_list}}
+{{product_list}}
+{{view}} -->
+
+<!-- {{object_list}} -->
+
+<div class='container'>
+    {%for obj in object_list %}
+    <div class='row'>
+        <div class='col'>{{obj.title}}</div>
+        <div class='col'>{{obj.description}}</div>
+        <div class='col'>{{obj.price}}</div>
+    </div>
+    {%endfor%}
+</div>
+
+<table border="2">
+    <tr>
+        <td>Title</td>
+        <td>Description</td>
+        <td>Price</td>
+    </tr>
+    {%for obj in object_list %}
+    <tr>
+        <td>{{obj.title}}</td>
+        <td>{{obj.description}}</td>
+        <td>{{obj.price}}</td>
+    </tr>
+    {%endfor%}
+</table>
